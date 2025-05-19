@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Occasion.ly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="home_style.css">
+
+</head>
+
+<body>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>Download the app for the best experience</p>
+    </div>
+
+    <!-- Page Name -->
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">Occasion.ly</div>
+        <button class="login-btn-header" onclick="openlogin()">Login</button>
+    </div>
+
+
+    <!-- Popup Modal -->
+    <div id="loginModal" class="modal" onclick="closelogin()">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span class="close-btn" onclick="closelogin()">&times;</span>
+
+            <div class="auth-card">
+                <h1 class="logo">✯ Occasion.ly</h1>
+                <p class="tagline">Make every moment memorable</p>
+
+                <div class="tabs">
+                    <button id="loginTab" class="tab active" onclick="toggleTab('login')">Log In</button>
+                    <button id="signupTab" class="tab" onclick="toggleTab('signup')">Sign Up</button>
+                </div>
+
+                <!-- Login Form -->
+                <div id="loginForm">
+                    <form>
+                        <div class="input-group">
+                            <i class="fa fa-envelope"></i>
+                            <input type="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="input-group">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" placeholder="Enter your password" required>
+                        </div>
+
+                        <div class="options">
+                            <label><input type="checkbox"> Remember me</label>
+                            <a href="#" class="forgot">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="login-btn">Log In <i class="fa fa-arrow-right"></i></button>
+                    </form>
+                </div>
+
+                <!-- Signup Form -->
+                <div id="signupForm" style="display: none;">
+                    <form>
+                        <div class="input-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" placeholder="Full Name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <i class="fa fa-envelope"></i>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="input-group">
+                            <i class="fa fa-phone"></i>
+                            <input type="tel" placeholder="Mobile Number" required>
+                        </div>
+
+                        <div class="input-group">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" placeholder="Password" required>
+                        </div>
+
+                        <button type="submit" class="login-btn">Sign Up <i class="fa fa-arrow-right"></i></button>
+                    </form>
+                </div>
+
+                <p class="continue">Or continue with</p>
+                <button class="google-btn">Continue with Google</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Hero Section -->
+    <!-- Hero Section with Slides -->
+    <header class="hero-section">
+        <div class="slider">
+            <div class="slides">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                    alt="Slide 1">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                    alt="Slide 2">
+                <img src="https://th.bing.com/th/id/OIP._-2tjSjNRgaHS_e2iRr45wHaE7?w=257&h=180&c=7&r=0&o=5&dpr=2&pid=1.7"
+                    alt="Slide 3">
+            </div>
+            <button class="slider-nav prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="slider-nav next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+
+
+
+        <div class="hero-text">
+            <h1>Celebrate special anniversaries in style</h1>
+            <button onclick="location.href='../venu/venu.html'">Explore Venues</button>
+
+        </div>
+    </header>
+
+
+
+    <!-- Event Selection -->
+    <section class="event-selection">
+        <h2>Select Event Type</h2>
+
+        <div class="event-cards">
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1506459225024-1428097a7e18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Birthday Party">
+                <p>Birthday Party</p>
+            </div>
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Wedding">
+                <p>Wedding</p>
+            </div>
+            <div class="event-card">
+                <img src="https://www.pingpongmoments.in/blog/wp-content/uploads/2022/09/corporate-events-3.jpg"
+                    alt="Corporate Event">
+                <p>Corporate Event</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search event...">
+        <button onclick="performSearch()">Search</button>
+
+    </div>
+
+    <!-- Featured Destinations -->
+    <div class="featured-destinations-container">
+        <h2 class="featured-title">Featured Destinations</h2>
+        <h4 class="punch-line">Discover perfect venues for your special occasions</h4>
+        <div class="featured-destinations">
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Destination 1">
+                <h3> Mountain Lodge</h3>
+                <h4>Aspen, Colorado</h4>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Destination 2">
+                <h3>Beachside Resort</h3>
+                <h4>Malibu, California</h4>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Destination 3">
+                <h3>Urban Luxury Hotel</h3>
+                <h4>New York City</h4>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Destination 4">
+                <h3>Vineyard Estate</h3>
+                <h4>Napa Valley</h4>
+            </div>
+        </div>
+
+
+        <!-- View All Destinations Button -->
+        <div class="view-all-container">
+            <button class="view-all-btn" onclick="toggleDestinations()">View All Destinations</button>
+        </div>
+
+        <!-- Hidden Destinations to Expand -->
+        <div class="additional-destinations" id="additionalDestinations">
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="
+                    Destination 5">
+                <h3>Rome</h3>
+                <h4>Ancient and Beautiful</h4>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Destination 6">
+                <h3>Barcelona</h3>
+                <h4>Artistic and Colorful</h4>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Destination 7">
+                <h3>Dubai</h3>
+                <h4>Modern and Luxurious</h4>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                    alt="Destination 8">
+                <h3>Amsterdam</h3>
+                <h4>Charming and Canal-Filled</h4>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="event-services">
+        <h2 class="e-tital" style="color:#6a0dad">Event Services</h2>
+        <p>Everything you need for a perfect celebration</p>
+
+        <div class="services-container">
+            <!-- Service Card 1 -->
+            <div class="service-card">
+                <div class="service-image"
+                    style="background-image: url('https://image.wedmegood.com/resized/450X/uploads/member/164066/1719921958_62.jpg?crop=10,113,2028,1141');">
+                    <div class="service-title">
+                        <i class="fa fa-camera"></i> Professional Photography
+                    </div>
+                </div>
+                <div class="service-details">
+                    <p>Capture your precious moments with our expert photographers</p>
+                    <ul>
+                        <li>Portrait Sessions</li>
+                        <li>Candid Coverage</li>
+                        <li>Same-Day Previews</li>
+                    </ul>
+                    <button class="details-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card">
+                <div class="service-image"
+                    style="background-image: url('https://image.wedmegood.com/resized/450X/uploads/member/395225/1672860377_1H9A5930.jpg?crop=8,207,2032,1143');">
+                    <div class="service-title">
+                        <i class="fa fa-video-camera"></i> Videography
+                    </div>
+                </div>
+                <div class="service-details">
+                    <p>Professional video coverage for your special day</p>
+                    <ul>
+                        <li>4K Recording</li>
+                        <li>Drone Shots</li>
+                        <li>Highlight Reels</li>
+                    </ul>
+                    <button class="details-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card">
+                <div class="service-image"
+                    style="background-image: url('https://image.wedmegood.com/resized/300X/uploads/option_image/62/4-star-above-hotels.png');">
+                    <div class="service-title">
+                        <i class="fa fa-cutlery"></i> Catering Services
+                    </div>
+                </div>
+                <div class="service-details">
+                    <p>Exquisite culinary experiences for your events</p>
+                    <ul>
+                        <li>Custom Menus</li>
+                        <li>Live Stations</li>
+                        <li>Dietary Options</li>
+                    </ul>
+                    <button class="details-btn">View Details</button>
+                </div>
+            </div>
+        </div>
+        <!-- View All services Button -->
+        <div class="view-all-services">
+            <button class="view-all-btn" onclick="toggleDestinations()">View All services</button>
+        </div>
+    </section>
+
+    <section class="special-offers">
+        <h2>Special Offers</h2>
+        <p>Limited time deals for your special events</p>
+
+        <div class="offers-container">
+            <div class="offer-card wedding">
+                <i class="fa fa-user icon"></i>
+                <h3>Wedding Package</h3>
+                <p>Complete wedding planning with 20% off on bookings made 6 months in advance</p>
+                <a href="#">Learn more <i class="fa fa-arrow-right"></i></a>
+            </div>
+            <div class="offer-card anniversary">
+                <i class="fa fa-calendar icon"></i>
+                <h3>Anniversary Special</h3>
+                <p>Romantic dinner, suite upgrade and complimentary champagne for anniversary celebrations</p>
+                <a href="#">Learn more <i class="fa fa-arrow-right"></i></a>
+            </div>
+            <div class="offer-card birthday">
+                <i class="fa fa-gift icon"></i>
+                <h3>Birthday Bundle</h3>
+                <p>Party venue, decorations, and catering at a special discounted rate</p>
+                <a href="#">Learn more <i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Sarah Johnson">
+                <h4>Sarah Johnson</h4>
+                <span>Bride</span>
+                <p>"CelebrateEase made planning our wedding so much easier. We found the perfect venue within our
+                    budget!"</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Michael Chen">
+                <h4>Michael Chen</h4>
+                <span>Event Planner</span>
+                <p>"As a professional planner, I recommend this app to all my clients. The variety of venues is
+                    impressive."</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Priya Patel">
+                <h4>Priya Patel</h4>
+                <span>Anniversary Celebration</span>
+                <p>"We celebrated our 25th anniversary at a beautiful location we found through this platform."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <h2>About CelebrateEase</h2>
+        <p class="about-text">
+            CelebrateEase helps you find and book the perfect venues for all your special celebrations.<br>
+            From weddings to birthdays and corporate events, we make planning seamless and enjoyable.
+        </p>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-search"></i></div>
+                <h3>Find Venues</h3>
+                <p>Search through thousands of venues perfect for any celebration</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-calendar-check"></i></div>
+                <h3>Book Instantly</h3>
+                <p>Secure your preferred date and venue with our instant booking system</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-check"></i></div>
+                <h3>Celebrate</h3>
+                <p>Enjoy your special day while we take care of the details</p>
+            </div>
+        </div>
+
+        <a href="#" class="get-started-btn">Get Started</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>CelebrateEase</h3>
+                <p>Making special events memorable since 2023</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Search Venues</a></li>
+                    <li><a href="#">Event Types</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Download</h4>
+                <a href="#" class="download-btn"><i class="fas fa-bell"></i> App Store</a>
+                <a href="#" class="download-btn"><i class="fas fa-download"></i> Google Play</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Occasion.ly. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Footer/Badge -->
+    <footer>
+        <p>Built by Raushan</p>
+    </footer>
+
+</body>
+<script src="home.js"></script>
+
+</html>

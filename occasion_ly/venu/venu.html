@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venues</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f8f8ff;
+            padding: 20px;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background-color: #6a0dad;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        /* Page Heading */
+        .page-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .page-heading h2 {
+            font-size: 32px;
+            color: #6a0dad;
+        }
+
+        /* Venues Container */
+        .venues-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Venue Cards */
+        .venue-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .venue-card {
+            background: white;
+            width: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .venue-card:hover {
+            transform: scale(1.05);
+        }
+
+        .venue-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .venue-card h3 {
+            padding: 10px;
+            color: #333;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-banner">
+        Venues
+    </div>
+
+    <div class="page-heading">
+        <h2>Explore Our Venues</h2>
+    </div>
+
+    <div class="venues-container">
+        <div class="venue-cards">
+            <div class="venue-card">
+                <img src="https://image.wedmegood.com/resized/450X/uploads/member/1800525/1739175867_2_Facade.jpg?crop=20,376,2016,1134" alt="Venue 1">
+                <h3>Grand Ballroom</h3>
+            </div>
+            <div class="venue-card">
+                <img src="https://image.wedmegood.com/resized/450X/uploads/member/494555/1739782361_WhatsApp_Image_2025_02_17_at_14.16.11__1_.jpeg?crop=6,52,1267,713" alt="Venue 2">
+                <h3>Sunset Terrace</h3>
+            </div>
+            <div class="venue-card">
+                <img src="https://image.wedmegood.com/resized/450X/uploads/member/138533/1611909257__JAN2623.jpg?crop=30,159,1992,1121" alt="Venue 3">
+                <h3>Conference Hall</h3>
+            </div>
+            <div class="venue-card">
+                <img src="https://image.wedmegood.com/resized/450X/uploads/member/24566026/1716879143_2023_12_15.jpg?crop=7,112,1347,757" alt="Venue 4">
+                <h3>Garden Pavilion</h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
